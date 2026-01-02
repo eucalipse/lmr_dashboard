@@ -119,9 +119,13 @@ class AE_Router
 	
 	
 	
-	static public function link($model, $id){
+	static public function link($model, $id, $appendLang = false){
 	    $u=self::getRoute($model, $id);
-	    return url('/'.$u['url']);
+	    $url = url('/'.$u['url']);
+	    if ($appendLang) {
+	        $url .= '?lang=en';
+	    }
+	    return $url;
 	}
 	
 	

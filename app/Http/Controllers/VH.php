@@ -8,6 +8,8 @@ class VH extends Controller
 
     static function categoryTree($category_id, $i=0, $out=[]){
         $lng=request()->get('lang','ua');
+        $isEn = $lng == 'en';
+        $langSuffix = $isEn ? '?lang=en' : '';
 
         $out=[];
         $c=\App\Model\Category::where('id', $category_id)->first();
@@ -15,18 +17,18 @@ class VH extends Controller
         if (!$c) return [];
 
         if ($c->parent<>-1){
-            $url_sub=\App\AE\C\AE_Router::link('category', $category_id);
+            $url_sub=\App\AE\C\AE_Router::link('category', $category_id, $isEn);
 
-            if ($category_id==1) $url_sub=url('/statystyka/details');
-            if ($category_id==2) $url_sub=url('/jakist-zyttia/details');
-            if ($category_id==3) $url_sub=url('/strategia/details');
-            if ($category_id==4) $url_sub=url('/concepcia/details');
+            if ($category_id==1) $url_sub=url('/statystyka/details').$langSuffix;
+            if ($category_id==2) $url_sub=url('/jakist-zyttia/details').$langSuffix;
+            if ($category_id==3) $url_sub=url('/strategia/details').$langSuffix;
+            if ($category_id==4) $url_sub=url('/concepcia/details').$langSuffix;
 
             $i++;
             $out=array_merge(self::categoryTree($c->parent, $i, $out), $out);
 
             if ($i==1) {
-                $url_sub=\App\AE\C\AE_Router::link('category', $c->parent)."?subCategory=".$c->id;
+                $url_sub=\App\AE\C\AE_Router::link('category', $c->parent).($isEn ? "?subCategory=".$c->id."&lang=en" : "?subCategory=".$c->id);
             }
 
             $out[]='<a href="'.$url_sub.'">'.trim(ucfirst($lng=='ua'?$c->title:$c->title_en)).'</a>' ;

@@ -17,7 +17,9 @@
         <?php
             foreach ($subCategories as $c){
                 $catTitle = ($lng == 'en' && $c->title_en) ? $c->title_en : $c->title;
-                print '<li><a href="?subCategory='.$c->id.'">'.$catTitle.'</a></li>';
+                $href = '?subCategory='.$c->id;
+                if ($lng == 'en') $href .= '&lang=en';
+                print '<li><a href="'.$href.'">'.$catTitle.'</a></li>';
             }
         ?>
     </ul>

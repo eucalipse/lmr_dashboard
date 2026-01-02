@@ -1,12 +1,13 @@
-<?php 
+<?php
 
 	use App\AE\C\AE_Router;
 	use App\Http\Controllers\VH;
 
+	$lng = request()->get('lang', 'ua');
 	$items=\App\Model\Stat::where('category_id', $category->id)->orderBy('widget_type','asc')->get();
-	
+
 	foreach ($items as $item){
-	    $url=AE_Router::link('stat', $item->id);
+	    $url=AE_Router::link('stat', $item->id, $lng == 'en');
 
 
 		if ($p->mainCategory==1 || $p->mainCategory==2){

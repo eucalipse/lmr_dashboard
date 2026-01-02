@@ -27,27 +27,27 @@
     <p class="asideTitle asideTitleStat <?php print 'asideTitleBg'.$p->mainCategory; ?>"><img src="<?php print url('/'); ?>/lmr/assets/images/<?php print $mainCategoryImg; ?>" alt=""><?php  print \App\Http\Controllers\Index::getContent('about_title_'.$p->mainCategory);  ?></p>
 	<nav>
 		<ul class="panel-group nav-menu" id="accordion" role="tablist" aria-multiselectable="false">
-			<?php 
+			<?php
     			use App\Model\Category;
-    			
+    			$isEn = $lng == 'en';
     			$items=Category::where('parent', $p->mainCategory)->get();
-    			
+
     			foreach ($items as $item){
-    			    $url=\App\AE\C\AE_Router::link('category', $item->id);
+    			    $url=\App\AE\C\AE_Router::link('category', $item->id, $isEn);
 
     			    $_items=Category::where('parent', $item->id)->where('type', null)->get();
     			    $hasSub=count($_items)>0;
-    			    
+
     			    $sub='';
     			    if ($hasSub){
     			        $in='';
     			        $j=0;
     			        foreach ($_items as $i){
-    			            if ($j==0) $url=\App\AE\C\AE_Router::link('category', $i->id);
+    			            if ($j==0) $url=\App\AE\C\AE_Router::link('category', $i->id, $isEn);
     			            if ($i->type<>1){
     			                $selected='';
     			                if ($i->id==$p->category->id) {$selected=' a_active'; $in='in';}
-    			                $url_sub=\App\AE\C\AE_Router::link('category', $i->id);
+    			                $url_sub=\App\AE\C\AE_Router::link('category', $i->id, $isEn);
         			            $sub.='<li><a class="  collapsed" data-toggle="none" aria-expanded="none" role="button" href="'.$url_sub.'">'.(($lng=='ua')?$i->title:$i->title_en).'</a></li>';
     			            }
     			            $j++;

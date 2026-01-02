@@ -1,11 +1,11 @@
-<?php $lng = request()->get('lang', 'ua'); ?>
+<?php $lng = request()->get('lang', 'ua'); $isEn = $lng == 'en'; ?>
 <div class="container articles">
     <div id="content">
         <div class="row">
 <?php
     $list=\App\Model\Article::All();
         foreach ($list as $item){
-            $url=\App\AE\C\AE_Router::link('article', $item->id);
+            $url=\App\AE\C\AE_Router::link('article', $item->id, $isEn);
             $itemTitle = ($lng == 'en' && $item->title_en) ? $item->title_en : $item->title;
 ?>
     <article class="col-sm-6 col-md-4 content-text article">

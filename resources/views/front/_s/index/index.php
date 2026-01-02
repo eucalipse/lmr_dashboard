@@ -42,7 +42,7 @@
                                  <p><?php print \App\Http\Controllers\Index::getContent('landing_subtitle_1'); ?></p>
                                  <br>
                                  <br>
-                                 <a href="<?php print url(\App\Http\Controllers\Index::getContent('landing_url_1')); ?>"><?php print \App\Http\Controllers\Index::getContent('landing_btn'); ?></a>
+                                 <a href="<?php print \App\Http\Controllers\Index::lurl(\App\Http\Controllers\Index::getContent('landing_url_1')); ?>"><?php print \App\Http\Controllers\Index::getContent('landing_btn'); ?></a>
                              </div>
                          </div>
                      </div>
@@ -65,7 +65,7 @@
                                 <p><?php print \App\Http\Controllers\Index::getContent('landing_subtitle_2'); ?></p>
                                 <br>
                                 <br>
-                                <a href="<?php print url(\App\Http\Controllers\Index::getContent('landing_url_2')); ?>"><?php print \App\Http\Controllers\Index::getContent('landing_btn'); ?></a>
+                                <a href="<?php print \App\Http\Controllers\Index::lurl(\App\Http\Controllers\Index::getContent('landing_url_2')); ?>"><?php print \App\Http\Controllers\Index::getContent('landing_btn'); ?></a>
                             </div>
                         </div>
                     </div>
@@ -88,7 +88,7 @@
                                  <p><?php print \App\Http\Controllers\Index::getContent('landing_subtitle_3'); ?></p>
                                  <br>
                                  <br>
-                                 <a href="<?php print url(\App\Http\Controllers\Index::getContent('landing_url_3')); ?>"><?php print \App\Http\Controllers\Index::getContent('landing_btn'); ?></a>
+                                 <a href="<?php print \App\Http\Controllers\Index::lurl(\App\Http\Controllers\Index::getContent('landing_url_3')); ?>"><?php print \App\Http\Controllers\Index::getContent('landing_btn'); ?></a>
                              </div>
                          </div>
                      </div>
@@ -112,7 +112,7 @@
                                  <p><?php print \App\Http\Controllers\Index::getContent('landing_subtitle_4'); ?></p>
                                  <br>
                                  <br>
-                                 <a href="<?php print url(\App\Http\Controllers\Index::getContent('landing_url_4')); ?>"><?php print \App\Http\Controllers\Index::getContent('landing_btn'); ?></a>
+                                 <a href="<?php print \App\Http\Controllers\Index::lurl(\App\Http\Controllers\Index::getContent('landing_url_4')); ?>"><?php print \App\Http\Controllers\Index::getContent('landing_btn'); ?></a>
                              </div>
                          </div>
                      </div>

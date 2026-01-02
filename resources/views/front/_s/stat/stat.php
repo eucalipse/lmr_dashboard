@@ -4,8 +4,9 @@
     use App\Http\Controllers\Index;
 
     $lng=request()->get('lang','ua');
-    
-    if ($lng=='en'){
+    $isEn = $lng == 'en';
+
+    if ($isEn){
         $p->object->title=$p->object->title_en;
         $p->object->measurement=$p->object->measurement_en;
         $p->object->vendor_name=$p->object->vendor_name_en;
@@ -14,11 +15,11 @@
 
     $p->category=\App\Model\Category::where('id', $p->object->category_id)->first();
     $p->mainCategory=Index::getMainCategory($p->category);
-    
+
     if ($p->category->type==1){
-        $url_back_to_category=\App\AE\C\AE_Router::link('category', $p->category->parent);
+        $url_back_to_category=\App\AE\C\AE_Router::link('category', $p->category->parent, $isEn);
     } else {
-        $url_back_to_category=\App\AE\C\AE_Router::link('category', $p->category->id);
+        $url_back_to_category=\App\AE\C\AE_Router::link('category', $p->category->id, $isEn);
     }
 
     $url_download='https://opendata.city-adm.lviv.ua/dataset/'.$p->object->key1.'/resource/'.$p->object->key2;

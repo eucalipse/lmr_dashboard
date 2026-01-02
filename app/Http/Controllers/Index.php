@@ -127,5 +127,15 @@ class Index extends Controller
 		}
 
 	}
+
+	// Language-aware URL helper - preserves ?lang=en parameter
+	static function lurl($path = '/'){
+		$url = url($path);
+		$lang = request()->get('lang');
+		if ($lang == 'en') {
+			$url .= (strpos($url, '?') !== false) ? '&lang=en' : '?lang=en';
+		}
+		return $url;
+	}
 }
     
