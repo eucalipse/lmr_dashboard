@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+    environment:
+      - APP_ENV=local
+      - APP_DEBUG=true
+      - DB_HOST=138.68.69.78
+      - DB_DATABASE=lmr_2024
+      - DB_USERNAME=root
+      - DB_PASSWORD=Okeypass778_mysql

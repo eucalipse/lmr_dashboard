@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+.table i {
+  font-size: 25px;
+  color: #1b1e24;
+}
+
+.user-info-wrapper .profile-wrapper {
+  width: 100%;
+  text-align: center;
+}
+
+#tablestat th:last-child {
+  width: 200px;
+}
+
+.ae_elements_0 {
+  display: none;
+}
+
+.logoWR {
+  text-align: center;
+  padding-left: 30px;
+}
+
+.logoWR img {
+  display: inline;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.summernote .note-editing-area,
+.summernote .note-dropzone {
+  height: 300px;
+}

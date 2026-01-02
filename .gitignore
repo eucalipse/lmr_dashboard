@@ -1,0 +1,13 @@
+/vendor
+/storage/framework/cache
+/storage/framework/sessions
+/storage/framework/views
+/storage/logs
+/public/.httaccess
+
+.env
+.buildpath
+.project
+/.idea
+/.settings
+.DS_Store
