@@ -16,7 +16,7 @@
                             <li <?php if (isset($p->mainCategory) && $p->mainCategory==1) print 'class="activeMainCategory"'; ?>><a href="<?php print $lurl('/statystyka/details'); ?>"><?php print \App\Http\Controllers\Index::getContent('header_1'); ?></a></li>
                             <li <?php if (isset($p->mainCategory) && $p->mainCategory==2) print 'class="activeMainCategory"'; ?>><a href="<?php print $lurl('/jakist-zyttia/details'); ?>"><?php print \App\Http\Controllers\Index::getContent('header_2'); ?></a></li>
                             <li <?php if (isset($p->mainCategory) && $p->mainCategory==3) print 'class="activeMainCategory"'; ?>><a href="<?php print $lurl('/strategia/details'); ?>"><?php print \App\Http\Controllers\Index::getContent('header_3'); ?></a></li>
-                            <li <?php if (isset($p->mainCategory) && $p->mainCategory==4) print 'class="activeMainCategory"'; ?>><a href="<?php print $lurl('/concepcia/zhytlo'); ?>"><?php print \App\Http\Controllers\Index::getContent('header_4'); ?></a></li>
+                            <li <?php if (isset($p->mainCategory) && $p->mainCategory==4) print 'class="activeMainCategory"'; ?>><a href="<?php print $lurl('/concepcia/details'); ?>"><?php print \App\Http\Controllers\Index::getContent('header_4'); ?></a></li>
                             <?php if ($p->lng=='ua'){ ?>
                                 <li><a href="<?php print $lurl('/articles'); ?>"><?php print \App\Http\Controllers\Index::getContent('header_5'); ?></a></li>
                             <?php } ?>
